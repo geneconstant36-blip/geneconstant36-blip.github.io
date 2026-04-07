@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sovereignty Matrix | GSU Silver Track</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; background-color: #0d1b2a; color: #e0e0e0; }
+        nav { background-color: #000; color: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #333; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+        nav ul li a { color: #fff; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
+        
+        .game-container { max-width: 850px; margin: 3rem auto; padding: 2rem; background: #1b263b; border-radius: 8px; border: 1px solid #415a77; box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
+        .geno-header { color: #00e676; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; border-bottom: 1px solid #00e676; padding-bottom: 0.5rem; display: flex; align-items: center; gap: 10px; }
+        .geno-header::before { content: "●"; color: #00e676; animation: blink 1.2s infinite; }
+        
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
+
+        .scenario-text { font-size: 1.15rem; margin-bottom: 2rem; color: #e0e0e0; }
+        
+        .choice-btn { display: block; width: 100%; text-align: left; background: #27344a; color: #fff; border: 1px solid #415a77; padding: 1rem; margin-bottom: 1rem; border-radius: 5px; cursor: pointer; font-size: 1rem; transition: all 0.3s; }
+        .choice-btn:hover { background: #415a77; border-color: #00e676; }
+        
+        .feedback-box { display: none; padding: 1.5rem; border-radius: 5px; margin-top: 1.5rem; font-weight: bold; line-height: 1.5; }
+        .feedback-failure { background: rgba(255, 82, 82, 0.1); border: 1px solid #ff5252; color: #ff8a80; }
+        .feedback-mastery { background: rgba(0, 230, 118, 0.1); border: 1px solid #00e676; color: #69f0ae; }
+        
+        .action-btn { display: inline-block; background-color: #00e676; color: #0d1b2a; padding: 0.8rem 1.5rem; text-decoration: none; border: none; font-weight: bold; border-radius: 5px; margin-top: 1rem; cursor: pointer; transition: background 0.3s; }
+        .action-btn:hover { background-color: #00c853; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="trifurcation.html">The Trifurcation Road</a></li>
+            <li><a href="mentorship.html">Find a Mentor</a></li>
+            <li><a href="library.html">Free DIY Library</a></li>
+        </ul>
+    </nav>
+
+    <div class="game-container">
+        <div class="geno-header">GENO Silver Track Active: Depth Over Speed</div>
+        <div id="game-content">
+            </div>
+    </div>
+
+    <script>
+        const scenarios = [
+            {
+                intro: "Welcome to the Silver Track. Here, we test your ability to perceive invisible structural architecture. You have 20 minutes of bandwidth. Begin.",
+                text: "<strong>Simulation 1: The Picket-Fence Trap</strong><br><br>You are a local community leader. The federal government has offered your town a massive grant to improve public health infrastructure. However, accepting the funds means your local health agency must bypass your elected state governor and report directly to a federal bureau in Washington D.C.<br><br>How do you proceed?",
+                choices: [
+                    { text: "Accept the funds. The community needs the infrastructure, and cooperative federalism is the most efficient way to deliver resources.", isCorrect: false, feedback: "<strong>Strategic Failure: Coercive Federalism.</strong><br><br>You have fallen into the 'Picket-Fence' trap. By allowing your local agency to report vertically to Washington, you have severed the internal chain of democratic accountability. Your state is now functioning as a semi-autonomous administrative franchise." },
+                    { text: "Refuse the funds. Rely on local tax structures, citing the Anti-Commandeering Doctrine established in cases like Printz v. United States.", isCorrect: true, feedback: "<strong>Mastery Achieved.</strong><br><br>You recognized the coercive mechanism. While the 16th and 17th Amendments stripped states of their structural veto, you utilized the residual sovereignty of refusal. You protected democratic accountability over immediate financial inducement." }
+                ]
+            },
+            {
+                intro: "Your civic sovereignty is holding. We now test your psychological sovereignty.",
+                text: "<strong>Simulation 2: The Architecture of Dependency</strong><br><br>You are advising a citizen caught in the 'Vibecession.' Structural costs (housing, childcare) have skyrocketed. They are currently receiving targeted, means-tested state assistance. They are offered a promotion at work that includes a slight pay raise, but taking it means they will hit a 'Welfare Cliff' and instantly lose their childcare subsidy.<br><br>What is the most insidious psychological threat to this citizen right now?",
+                choices: [
+                    { text: "They will become lazy because the state is providing for their basic material needs.", isCorrect: false, feedback: "<strong>Strategic Failure: Misdiagnosed Pathology.</strong><br><br>You have blamed the individual for a structural mathematical trap. The individual is not lazy; they are acting as a rational economic agent facing a 100% effective marginal tax rate. Blaming 'culture' ignores the architecture." },
+                    { text: "The loss of Marie Jahoda's latent functions of work (time structure, purpose, status), leading directly to a neurobiological state of Learned Helplessness.", isCorrect: true, feedback: "<strong>Mastery Achieved.</strong><br><br>You correctly identified the cognitive pathogen. When arbitrary bureaucracies strip individuals of the ability to exert meaningful effort for reward (contrafreeloading), the ventromedial prefrontal cortex fails. You understand that human flourishing requires autonomous effort, not just material subsistence." }
+                ]
+            }
+        ];
+
+        let currentScenario = 0;
+
+        function renderScenario() {
+            const container = document.getElementById('game-content');
+            const scenario = scenarios[currentScenario];
+            
+            let html = `<p class="scenario-text"><em>${scenario.intro}</em></p>`;
+            html += `<p class="scenario-text">${scenario.text}</p><div id="choices-area">`;
+            
+            scenario.choices.forEach((choice, index) => {
+                html += `<button class="choice-btn" onclick="selectChoice(${index})">${choice.text}</button>`;
+            });
+            
+            html += `</div><div id="feedback-area"></div>`;
+            container.innerHTML = html;
+        }
+
+        function selectChoice(choiceIndex) {
+            const scenario = scenarios[currentScenario];
+            const choice = scenario.choices[choiceIndex];
+            const feedbackArea = document.getElementById('feedback-area');
+            const choicesArea = document.getElementById('choices-area');
+            
+            choicesArea.style.display = 'none'; 
+            
+            if (choice.isCorrect) {
+                let nextAction = '';
+                if (currentScenario < scenarios.length - 1) {
+                    nextAction = `<button class="action-btn" onclick="nextScenario()">Proceed to Final Diagnostic</button>`;
+                } else {
+                    nextAction = `
+                        <p style="margin-top: 1.5rem;"><strong>GENO Directive:</strong> You have survived the structural simulation. You recognize that poverty is not merely a lack of capital, but a deprivation of cognitive bandwidth and autonomy.</p>
+                        <a href="mentorship.html" class="action-btn">Advance to Mentorship Gateway</a>
+                    `;
+                }
+                
+                feedbackArea.innerHTML = `
+                    <div class="feedback-box feedback-mastery" style="display:block;">
+                        ${choice.feedback}
+                    </div>
+                    ${nextAction}
+                `;
+            } else {
+                feedbackArea.innerHTML = `
+                    <div class="feedback-box feedback-failure" style="display:block;">
+                        ${choice.feedback}
+                    </div>
+                    <button class="action-btn" style="background:#ff5252; color:#fff;" onclick="resetChoices()">Rethink & Try Again</button>
+                `;
+            }
+        }
+
+        function resetChoices() {
+            document.getElementById('choices-area').style.display = 'block';
+            document.getElementById('feedback-area').innerHTML = '';
+        }
+
+        function nextScenario() {
+            currentScenario++;
+            renderScenario();
+        }
+
+        renderScenario();
+    </script>
+
+</body>
+</html>
