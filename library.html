@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free DIY Survival Library | Global Sovereign University</title>
+    <title>The GSU Archive: DIY Survival Library | Global Sovereign University</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; background-color: #f4f7f6; color: #333; }
         
@@ -12,27 +12,31 @@
         nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
         nav ul li a { color: #fff; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: color 0.3s; }
         nav ul li a:hover { color: #4da6ff; }
+        nav ul li a.active { color: #4da6ff; border-bottom: 2px solid #4da6ff; padding-bottom: 2px; }
 
         /* Page Layout */
-        .container { max-width: 900px; margin: 3rem auto; padding: 2rem; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .header-section { text-align: center; border-bottom: 2px solid #4da6ff; padding-bottom: 2rem; margin-bottom: 2rem; }
-        .header-section h1 { color: #1a2a3a; font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .header-section p { font-size: 1.2rem; color: #555; }
+        .container { max-width: 1200px; margin: 3rem auto; padding: 2rem; }
+        .header-section { text-align: center; border-bottom: 2px solid #4da6ff; padding-bottom: 2rem; margin-bottom: 3rem; background: #fff; padding: 3rem 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .header-section h1 { color: #1a2a3a; font-size: 2.8rem; margin-bottom: 0.5rem; margin-top: 0; }
+        .header-section p { font-size: 1.2rem; color: #555; max-width: 800px; margin: 0 auto; }
 
-        /* Book Grid */
-        .book-grid { display: flex; flex-direction: column; gap: 2rem; }
-        .book-card { display: flex; align-items: center; gap: 2rem; background: #f9f9f9; border: 1px solid #ddd; padding: 2rem; border-radius: 8px; }
-        .book-icon { font-size: 4rem; color: #4da6ff; min-width: 80px; text-align: center; }
-        .book-info h2 { margin-top: 0; color: #2c3e50; }
+        /* Category Styling */
+        .category-title { color: #1a2a3a; font-size: 2rem; margin-top: 3rem; margin-bottom: 1.5rem; padding-left: 1rem; border-left: 5px solid #4da6ff; }
         
-        .btn { display: inline-block; background-color: #4da6ff; color: #fff; padding: 0.8rem 1.5rem; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 1rem; transition: background 0.3s; }
+        /* Grid Layout for Books */
+        .book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+        .book-card { background: #fff; border: 1px solid #e0e0e0; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s, box-shadow 0.3s; }
+        .book-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); border-color: #4da6ff; }
+        
+        .book-icon { font-size: 3rem; margin-bottom: 1rem; color: #4da6ff; }
+        .book-info h3 { margin-top: 0; color: #2c3e50; font-size: 1.3rem; line-height: 1.3; }
+        .book-info p { color: #666; font-size: 0.95rem; margin-bottom: 1.5rem; }
+        
+        .btn { display: inline-block; text-align: center; background-color: #4da6ff; color: #fff; padding: 0.8rem 1rem; text-decoration: none; font-weight: bold; border-radius: 5px; transition: background 0.3s; width: 100%; box-sizing: border-box; }
         .btn:hover { background-color: #3388dd; }
         
-        .tpm-note { background: #e8f4f8; border-left: 4px solid #1a2a3a; padding: 1.5rem; margin-top: 3rem; font-style: italic; }
-
-        @media (max-width: 600px) {
-            .book-card { flex-direction: column; text-align: center; }
-        }
+        .tpm-note { background: #1a2a3a; color: #fff; padding: 2.5rem; margin-top: 4rem; border-radius: 8px; text-align: center; }
+        .tpm-note h2 { color: #4da6ff; margin-top: 0; }
     </style>
 </head>
 <body>
@@ -42,38 +46,138 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="trifurcation.html">The Trifurcation Road</a></li>
             <li><a href="mentorship.html">Find a Mentor</a></li>
-            <li><a href="library.html">Free DIY Library</a></li>
+            <li><a href="library.html" class="active">Free DIY Library</a></li>
+            <li><a href="about.html">About GSU</a></li>
         </ul>
     </nav>
 
     <div class="container">
         <div class="header-section">
-            <h1>The DIY Survival Library</h1>
-            <p>Congratulations on passing the Comprehension Bridge. You have proven your cognitive sovereignty. Now, it is time to secure your physical environment.</p>
+            <h1>The GSU Archive</h1>
+            <p>Congratulations on passing the Comprehension Bridge. You have proven your cognitive sovereignty. Now, it is time to secure your physical environment. Choose your discipline below to begin your mastery.</p>
         </div>
 
+        <h2 class="category-title">Core Foundations & Infrastructure</h2>
         <div class="book-grid">
             <div class="book-card">
-                <div class="book-icon">⚡</div>
                 <div class="book-info">
-                    <h2>The Fundamentals of Home Electrical Maintenance</h2>
-                    <p>A sovereign individual does not rely blindly on external systems for basic survival. This manual teaches you the safe, foundational skills to diagnose and maintain your home's electrical grid. Learn to trace circuits, safely replace fixtures, and understand the flow of power in your own walls.</p>
-                    <a href="#" class="btn">Download PDF Guide</a>
+                    <div class="book-icon">🧱</div>
+                    <h3>Foundations of Repair</h3>
+                    <p>The philosophical and practical starting point for taking ownership of your physical environment.</p>
                 </div>
+                <a href="Foundations-of-Repair..pdf" class="btn" target="_blank">Download PDF</a>
             </div>
-
             <div class="book-card">
-                <div class="book-icon">🔧</div>
                 <div class="book-info">
-                    <h2>Essential Tool Upkeep & Autonomous Maintenance</h2>
-                    <p>A tool that fails when you need it is a liability. This guide introduces you to the discipline of keeping your physical instruments in peak condition. Learn rust prevention, calibration, sharpening, and storage techniques that extend the life of your gear by decades.</p>
-                    <a href="#" class="btn">Download PDF Guide</a>
+                    <div class="book-icon">🏗️</div>
+                    <h3>Residential Framing</h3>
+                    <p>Understand the skeleton of your shelter. Master the principles of structural integrity and load-bearing logic.</p>
                 </div>
+                <a href="Residential-Framing.pdf" class="btn" target="_blank">Download PDF</a>
+            </div>
+            <div class="book-card">
+                <div class="book-info">
+                    <div class="book-icon">🪨</div>
+                    <h3>Concrete and Masonry</h3>
+                    <p>The science of the earth. Learn to mix, pour, cure, and repair the most foundational elements of human building.</p>
+                </div>
+                <a href="Concrete-and-Masonry.pdf" class="btn" target="_blank">Download PDF</a>
+            </div>
+            <div class="book-card">
+                <div class="book-info">
+                    <div class="book-icon">📋</div>
+                    <h3>Home Safety Inspection</h3>
+                    <p>Train your eyes to see hazards before they become catastrophes. The proactive guide to sovereign living.</p>
+                </div>
+                <a href="Home-Safety-Inspection.pdf" class="btn" target="_blank">Download PDF</a>
+            </div>
+        </div>
+
+        <h2 class="category-title">Electrical Mastery</h2>
+        <div class="book-grid">
+            <div class="book-card">
+                <div class="book-info">
+                    <div class="book-icon">⚡</div>
+                    <h3>Home Electrical Basics</h3>
+                    <p>A sovereign individual does not rely blindly on external systems. Learn to diagnose and maintain your home's grid.</p>
+                </div>
+                <a href="Home-Electrical-Basics.pdf" class="btn" target="_blank">Download PDF</a>
+            </div>
+            <div class="book-card">
+                <div class="book-info">
+                    <div class="book-icon">⚠️</div>
+                    <h3>Pre-Apprentice Electrical Safety Theory</h3>
+                    <p>Before you touch a wire, you must understand the physics of power. The ultimate safety primer for electrical work.</p>
+                </div>
+                <a href="Pre-Apprentice-Electrical-Safety-Theory.pdf" class="btn" target="_blank">Download PDF</a>
+            </div>
+            <div class="book-card">
+                <div class="book-info">
+                    <div class="book-icon">🔌</div>
+                    <h3>Wiring, Grounding & Troubleshooting</h3>
+                    <p>Master the logic of circuits. Learn to trace faults, ensure proper grounding, and solve complex electrical puzzles.</p>
+                </div>
+                <a href="Wiring-Grounding-Troubleshooting.pdf" class="btn" target="_blank">Download PDF</a>
+            </div>
+            <div class="book-card">
+                <div class="book-info">
+                    <div class="book-icon">📘</div>
+                    <h3>The Electrician Complete Guide</h3>
+                    <p>The masterclass text. A comprehensive manual taking you from basic theory to advanced electrical application.</p>
+                </div>
+                <a href="The-Electrician-Complete-Guide.pdf" class="btn" target="_blank">Download PDF</a>
+            </div>
+        </div>
+
+        <h2 class="category-title">Fluid & Mechanical Systems</h2>
+        <div class="book-grid">
+            <div class="book-card">
+                <div class="book-info">
+                    <div class="book-icon">💧</div>
+                    <h3>Home Plumbing Basics</h3>
+                    <p>Understand the pressurized arteries of your home. Learn to manage flow, clear obstructions, and maintain pipes.</p>
+                </div>
+                <a href="Home-Plumbing-Basics.pdf" class="btn" target="_blank">Download PDF</a>
+            </div>
+            <div class="book-card">
+                <div class="book-info">
+                    <div class="book-icon">🚰</div>
+                    <h3>Plumbing Without the Plumber</h3>
+                    <p>Take direct control of your water infrastructure. Eliminate dependency on costly outside contractors for everyday fixes.</p>
+                </div>
+                <a href="Plumbing-Without-the-Plumber.pdf" class="btn" target="_blank">Download PDF</a>
+            </div>
+            <div class="book-card">
+                <div class="book-info">
+                    <div class="book-icon">❄️</div>
+                    <h3>Basic Appliance Repair</h3>
+                    <p>Stop replacing machinery that can be fixed. Learn the electromechanical logic behind the machines you use daily.</p>
+                </div>
+                <a href="Basic-Appliance-Repair.pdf" class="btn" target="_blank">Download PDF</a>
+            </div>
+            <div class="book-card">
+                <div class="book-info">
+                    <div class="book-icon">🚗</div>
+                    <h3>Basic Automotive Knowledge</h3>
+                    <p>Freedom of movement requires an understanding of your vehicle. Master the combustion engine and basic maintenance.</p>
+                </div>
+                <a href="BASIC-AUTOMOTIVE-KNOWLEDGE.pdf" class="btn" target="_blank">Download PDF</a>
+            </div>
+            <div class="book-card">
+                <div class="book-info">
+                    <div class="book-icon">🚜</div>
+                    <h3>Lawn & Garden Equipment</h3>
+                    <p>Maintain the tools that maintain your land. Learn carburetor tuning, blade sharpening, and small engine repair.</p>
+                </div>
+                <a href="Lawn-Garden-Equipment.pdf" class="btn" target="_blank">Download PDF</a>
             </div>
         </div>
 
         <div class="tpm-note">
-            <strong>A Note from GSU:</strong> Why does a university focused on systemic power and epistemic crisis care about your toolbox? Because of <strong>Total Productive Maintenance (TPM)</strong>. Autonomous maintenance—the act of the operator taking ownership of their own equipment—is the first step toward self-governance. When you learn to maintain your tools and your home, you are training the exact same mental muscles required to maintain a community and a republic.
+            <h2>The Philosophy of Total Productive Maintenance (TPM)</h2>
+            <p style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8;">
+                Why does a university focused on systemic power and epistemic crisis care about your toolbox? Because autonomous maintenance—the act of the operator taking ownership of their own equipment—is the first step toward self-governance. When you learn to maintain your tools and your home, you are training the exact same mental muscles required to maintain a community and a republic.
+            </p>
         </div>
     </div>
 
