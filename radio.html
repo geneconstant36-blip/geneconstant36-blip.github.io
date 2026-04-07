@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSU Radio Lounge & Focus Hub | Global Sovereign University</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; background-color: #0b1320; color: #e0e6ed; }
+        
+        /* Master Navigation - Dark Mode */
+        nav { background-color: #000; color: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid #b388ff; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+        nav ul li a { color: #fff; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: color 0.3s; }
+        nav ul li a:hover { color: #b388ff; }
+        nav ul li a.active { color: #b388ff; border-bottom: 2px solid #b388ff; padding-bottom: 2px; }
+
+        .container { max-width: 1000px; margin: 3rem auto; padding: 2rem; display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; }
+        
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; }
+        }
+
+        .header-span { grid-column: 1 / -1; text-align: center; margin-bottom: 1rem; border-bottom: 1px solid #2a3f5a; padding-bottom: 2rem; }
+        .header-span h1 { color: #b388ff; font-size: 3rem; margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+        .header-span p { color: #8fa3b8; font-size: 1.2rem; }
+
+        /* Radio Player Box */
+        .radio-box { background: #111d2f; padding: 2rem; border-radius: 8px; border: 1px solid #2a3f5a; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .radio-box h2 { color: #fff; margin-top: 0; display: flex; align-items: center; gap: 10px; }
+        .radio-box h2::before { content: "●"; color: #00e676; animation: blink 2s infinite; }
+        
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
+
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; border-radius: 4px; margin-top: 1.5rem; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+        /* Focus Timer Box */
+        .timer-box { background: #111d2f; padding: 2rem; border-radius: 8px; border: 1px solid #2a3f5a; text-align: center; display: flex; flex-direction: column; justify-content: center; }
+        .timer-box h2 { color: #b388ff; margin-top: 0; font-size: 1.5rem; }
+        .time-display { font-size: 4rem; font-weight: bold; color: #fff; margin: 1rem 0; font-family: monospace; }
+        
+        .timer-controls button { background: #1a2a3a; color: #fff; border: 1px solid #4da6ff; padding: 0.8rem 1.5rem; margin: 0.5rem; border-radius: 4px; cursor: pointer; font-weight: bold; transition: all 0.3s; }
+        .timer-controls button:hover { background: #4da6ff; color: #0b1320; }
+        .timer-controls button.reset { border-color: #ff3366; }
+        .timer-controls button.reset:hover { background: #ff3366; color: #fff; }
+
+        .note { grid-column: 1 / -1; text-align: center; margin-top: 2rem; color: #5a7392; font-style: italic; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="trifurcation.html">The Trifurcation Road</a></li>
+            <li><a href="library.html">The GSU Archive</a></li>
+            <li><a href="radio.html" class="active">Radio Lounge</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="header-span">
+            <h1>GSU Radio Lounge</h1>
+            <p>Open this page in a new tab. Protect your bandwidth. Reclaim your focus.</p>
+        </div>
+
+        <div class="radio-box">
+            <h2>GSU Focus Stream Active</h2>
+            <p>Continuous instrumental beats to block out the noise of the attention economy. Ideal for reading DIY manuals or deep-work sessions.</p>
+            
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=0" title="GSU Focus Radio" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="timer-box">
+            <h2>Cognitive Focus Timer</h2>
+            <p style="color: #8fa3b8; font-size: 0.9rem;">Human bandwidth is finite. Work in sovereign 25-minute sprints.</p>
+            
+            <div class="time-display" id="time">25:00</div>
+            
+            <div class="timer-controls">
+                <button onclick="startTimer()" id="startBtn">Start Focus</button>
+                <button class="reset" onclick="resetTimer()">Reset</button>
+            </div>
+        </div>
+
+        <div class="note">
+            Tip: Leave this tab open while you read your GSU PDFs or navigate the Trifurcation Road.
+        </div>
+    </div>
+
+    <script>
+        let timeLeft = 1500; // 25 minutes in seconds
+        let timerId = null;
+        let isRunning = false;
+
+        function updateDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('time').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function startTimer() {
+            if (isRunning) return;
+            
+            isRunning = true;
+            document.getElementById('startBtn').textContent = 'Running...';
+            document.getElementById('startBtn').style.background = '#4da6ff';
+            document.getElementById('startBtn').style.color = '#0b1320';
+
+            timerId = setInterval(() => {
+                timeLeft--;
+                updateDisplay();
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timerId);
+                    isRunning = false;
+                    document.getElementById('startBtn').textContent = 'Start Focus';
+                    alert("Focus Sprint Complete. Step away and reset your bandwidth.");
+                    resetTimer();
+                }
+            }, 1000);
+        }
+
+        function resetTimer() {
+            clearInterval(timerId);
+            isRunning = false;
+            timeLeft = 1500;
+            updateDisplay();
+            document.getElementById('startBtn').textContent = 'Start Focus';
+            document.getElementById('startBtn').style.background = '#1a2a3a';
+            document.getElementById('startBtn').style.color = '#fff';
+        }
+    </script>
+</body>
+</html>
