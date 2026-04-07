@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Automotive Knowledge | Play, Hear, See | GSU</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; background-color: #f4f7f6; color: #333; }
+        
+        /* Master Navigation */
+        nav { background-color: #1a2a3a; color: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid #4da6ff; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+        nav ul li a { color: #fff; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: color 0.3s; }
+        nav ul li a:hover { color: #4da6ff; }
+
+        /* Hero Section */
+        .hero { background: #1a2a3a; color: #fff; padding: 4rem 2rem; text-align: center; border-bottom: 5px solid #4da6ff; }
+        .hero h1 { color: #e0e0e0; font-size: 3.5rem; margin-bottom: 1rem; margin-top: 0; text-transform: uppercase; letter-spacing: 2px; }
+        .hero h1 span { color: #4da6ff; }
+        .hero p { font-size: 1.3rem; max-width: 800px; margin: 0 auto; color: #b0c4de; }
+
+        /* Main Container */
+        .container { max-width: 1000px; margin: 0 auto; padding: 3rem 2rem; }
+        
+        /* Section Headers */
+        h2 { color: #1a2a3a; border-bottom: 2px solid #4da6ff; padding-bottom: 0.5rem; margin-top: 3rem; display: flex; align-items: center; gap: 10px; }
+        
+        /* Media Embed Boxes */
+        .media-box { background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 2rem; border-left: 5px solid #4da6ff; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; border-radius: 4px; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        /* Game Box */
+        .game-box { background: #111d2f; color: #e0e6ed; padding: 2.5rem; border-radius: 8px; margin-top: 2rem; border: 1px solid #2a3f5a; box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+        .geno-header { color: #4da6ff; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; }
+        .geno-header::before { content: "●"; color: #4da6ff; animation: blink 1.5s infinite; }
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
+
+        .scenario-text { font-size: 1.15rem; margin-bottom: 2rem; }
+        
+        .choice-btn { display: block; width: 100%; text-align: left; background: #1a2a3a; color: #fff; border: 1px solid #3a506b; padding: 1rem; margin-bottom: 1rem; border-radius: 5px; cursor: pointer; transition: all 0.3s; font-size: 1rem; }
+        .choice-btn:hover { background: #2a3f5a; border-color: #4da6ff; }
+        
+        #feedback-area { display: none; padding: 1.5rem; border-radius: 5px; margin-top: 1.5rem; font-weight: bold; }
+        
+        /* Purchase Box */
+        .purchase-box { background: #e8f4f8; padding: 3rem; text-align: center; border-radius: 8px; margin-top: 4rem; border: 2px dashed #4da6ff; }
+        .btn { display: inline-block; background-color: #4da6ff; color: #fff; padding: 1rem 2rem; text-decoration: none; font-weight: bold; font-size: 1.2rem; border-radius: 5px; margin-top: 1.5rem; transition: background 0.3s; }
+        .btn:hover { background-color: #3388dd; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="trifurcation.html">The Trifurcation Road</a></li>
+            <li><a href="library.html">The GSU Archive</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h1>Basic <span>Automotive</span> Knowledge</h1>
+        <p>Your vehicle is not a mystery box. It is a mechanical system. True physical sovereignty requires freedom of movement, and you cannot be free if you are entirely dependent on a system you do not understand.</p>
+    </div>
+
+    <div class="container">
+        
+        <h2>👁️ SEE: The Machinery Demystified</h2>
+        <div class="media-box">
+            <p><strong>Watch the Breakdown:</strong> Dr. Constant explains the core systems of the combustion engine and how to overcome the "flinch" of the check engine light. <em>(Replace with actual YouTube embed code)</em></p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <h2>🎧 HEAR: The Voice of Sovereignty</h2>
+        <div class="media-box">
+            <p><strong>Listen to the Podcast:</strong> Dive into the philosophy of Total Productive Maintenance (TPM) applied to the driveway. Stop outsourcing your competence.</p>
+            <div id="buzzsprout-player-placeholder" style="background:#f0f0f0; padding:2rem; text-align:center; border-radius:4px; color:#666;">
+                <em>[ Buzzsprout MP3 Player Embed Code Goes Here ]</em>
+            </div>
+        </div>
+
+        <h2>🕹️ PLAY: Diagnostic Simulator</h2>
+        <p>You have seen the mechanics. You have heard the philosophy. Now, test your physical sovereignty. GENO is active.</p>
+        
+        <div class="game-box">
+            <div class="geno-header">GENO INTERACTIVE MEDIATOR ACTIVE</div>
+            <div id="scenario-content">
+                </div>
+        </div>
+
+        <div class="purchase-box">
+            <h2 style="margin-top:0; justify-content:center; border:none;">Master Your Machine</h2>
+            <p>You have played, heard, and seen the evidence. Now, acquire the complete operating manual. Download the full <em>Basic Automotive Knowledge</em> textbook and reclaim your mobility.</p>
+            <a href="BASIC-AUTOMOTIVE-KNOWLEDGE.pdf" class="btn" target="_blank">Download the Free PDF Manual</a>
+        </div>
+
+    </div>
+
+    <script>
+        const questions = [
+            {
+                q: "What is the primary function of a vehicle's alternator?",
+                choices: [
+                    "To provide the initial spark that starts the engine.",
+                    "To cool the engine block during high speeds.",
+                    "To charge the battery and power the electrical system while the engine is running.",
+                    "To filter impurities from the transmission fluid."
+                ],
+                correct: 2,
+                feedbackSuccess: "Mastery Achieved. You understand the electrical lifeblood of the car. The battery starts it; the alternator sustains it.",
+                feedbackFail: "Strategic Failure. You have misidentified the power source. The alternator sustains the electrical system once the engine is running."
+            },
+            {
+                q: "In the context of Total Productive Maintenance (TPM), what does 'Autonomous Maintenance' on your vehicle mean?",
+                choices: [
+                    "Purchasing a self-driving, autonomous vehicle.",
+                    "Taking the car to the dealership for every scheduled checkup.",
+                    "Ignoring the check engine light until the vehicle stops operating.",
+                    "The owner performing daily inspections, cleaning, and routine physical upkeep."
+                ],
+                correct: 3,
+                feedbackSuccess: "Mastery Achieved. You have claimed ownership. Autonomous maintenance means the operator is the first line of defense against system failure.",
+                feedbackFail: "Strategic Failure. You are outsourcing your sovereignty. Autonomous maintenance requires the owner to take active responsibility for routine physical upkeep."
+            },
+            {
+                q: "When checking your engine oil using the dipstick, which of the following strongly indicates that the oil needs to be changed immediately?",
+                choices: [
+                    "The oil is transparent and amber-colored.",
+                    "The oil level is exactly resting at the 'Full' mark.",
+                    "The oil is gritty, highly viscous, and very dark black.",
+                    "The dipstick feels cold to the touch."
+                ],
+                correct: 2,
+                feedbackSuccess: "Mastery Achieved. You can read the fluid health. Gritty, dark oil has lost its viscosity and is actively harming the engine.",
+                feedbackFail: "Strategic Failure. You have misread the fluid telemetry. Gritty, thick, black oil indicates severe degradation and requires immediate replacement."
+            }
+        ];
+
+        let currentQ = 0;
+
+        function loadQuestion() {
+            const container = document.getElementById('scenario-content');
+            if (currentQ >= questions.length) {
+                container.innerHTML = `
+                    <h3 style="color:#4da6ff;">Simulation Complete</h3>
+                    <p>You have successfully passed the Automotive Diagnostic protocol. You are ready to open the hood.</p>
+                `;
+                return;
+            }
+
+            const qData = questions[currentQ];
+            let html = `<p class="scenario-text"><strong>Question ${currentQ + 1} of 3:</strong> ${qData.q}</p><div id="choices">`;
+            
+            qData.choices.forEach((choice, index) => {
+                html += `<button class="choice-btn" onclick="checkAnswer(${index})">${choice}</button>`;
+            });
+            
+            html += `</div><div id="feedback-area"></div>`;
+            container.innerHTML = html;
+        }
+
+        function checkAnswer(selectedIndex) {
+            const qData = questions[currentQ];
+            const isCorrect = (selectedIndex === qData.correct);
+            
+            document.getElementById('choices').style.display = 'none';
+            const feedbackArea = document.getElementById('feedback-area');
+            feedbackArea.style.display = 'block';
+            
+            if(isCorrect) {
+                feedbackArea.style.background = 'rgba(77, 166, 255, 0.1)';
+                feedbackArea.style.border = '1px solid #4da6ff';
+                feedbackArea.style.color = '#80c1ff';
+                feedbackArea.innerHTML = `<p>${qData.feedbackSuccess}</p><button class="btn" style="padding:0.5rem 1rem; font-size:1rem; margin-top:1rem;" onclick="nextQuestion()">Proceed</button>`;
+            } else {
+                feedbackArea.style.background = 'rgba(255, 51, 102, 0.1)';
+                feedbackArea.style.border = '1px solid #ff3366';
+                feedbackArea.style.color = '#ff809f';
+                feedbackArea.innerHTML = `<p>${qData.feedbackFail}</p><button class="btn" style="padding:0.5rem 1rem; font-size:1rem; margin-top:1rem; background-color:#ff3366;" onclick="retryQuestion()">Re-evaluate</button>`;
+            }
+        }
+
+        function retryQuestion() {
+            document.getElementById('choices').style.display = 'block';
+            document.getElementById('feedback-area').style.display = 'none';
+        }
+
+        function nextQuestion() {
+            currentQ++;
+            loadQuestion();
+        }
+
+        // Start game
+        loadQuestion();
+    </script>
+</body>
+</html>
