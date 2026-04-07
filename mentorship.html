@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentorship Gateway | Global Sovereign University</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; background-color: #f4f7f6; color: #333; }
+        nav { background-color: #1a2a3a; color: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+        nav ul li a { color: #fff; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: color 0.3s; }
+        nav ul li a:hover { color: #4da6ff; }
+
+        .container { max-width: 800px; margin: 3rem auto; padding: 2.5rem; background: #fff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 2rem; }
+        .header h1 { color: #2c3e50; border-bottom: 2px solid #4da6ff; padding-bottom: 1rem; display: inline-block; }
+        .header p { font-size: 1.1rem; color: #555; }
+
+        .form-group { margin-bottom: 1.5rem; }
+        label { display: block; font-weight: bold; margin-bottom: 0.5rem; color: #1a2a3a; }
+        input[type="text"], input[type="email"], select, textarea { width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; font-size: 1rem; box-sizing: border-box; }
+        textarea { resize: vertical; min-height: 100px; }
+        
+        .btn { display: block; width: 100%; background-color: #4da6ff; color: #fff; padding: 1rem; border: none; font-weight: bold; font-size: 1.1rem; border-radius: 5px; cursor: pointer; transition: background 0.3s; }
+        .btn:hover { background-color: #3388dd; }
+
+        .google-notice { background-color: #e8f4f8; padding: 1rem; border-left: 4px solid #4da6ff; margin-bottom: 2rem; font-size: 0.95rem; }
+        
+        /* Success message hidden by default */
+        #success-message { display: none; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: 1.5rem; border-radius: 5px; text-align: center; margin-top: 1.5rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="trifurcation.html">The Trifurcation Road</a></li>
+            <li><a href="mentorship.html">Find a Mentor</a></li>
+            <li><a href="library.html">Free DIY Library</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>GSU Mentorship Gateway</h1>
+            <p>Sovereignty is not achieved in isolation. To unlock advanced learning tiers, you must connect with a guide.</p>
+        </div>
+
+        <div class="google-notice">
+            <strong>System Integration Note:</strong> GSU utilizes Google Workspace resources to match you with a mentor. Once matched, you will receive a secure Google Meet link for frictionless, face-to-face guidance directly in your browser.
+        </div>
+
+        <form id="mentor-form">
+            <div class="form-group">
+                <label for="name">Sovereign Designation (Name/Alias)</label>
+                <input type="text" id="name" required placeholder="Enter your name">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Comms Link (Email Address)</label>
+                <input type="email" id="email" required placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <label for="track">Current Trifurcation Track</label>
+                <select id="track" required>
+                    <option value="" disabled selected>Select your current path...</option>
+                    <option value="bronze">Bronze Track (Good Road)</option>
+                    <option value="silver">Silver/Gold Track (Better Road)</option>
+                    <option value="platinum">Platinum Track (Best Road)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="goal">Primary Cognitive Goal</label>
+                <textarea id="goal" required placeholder="What systemic barrier are you trying to overcome? (e.g., Financial dependence, cognitive scarcity, epistemic confusion)"></textarea>
+            </div>
+
+            <button type="submit" class="btn">Initiate Mentor Match Protocol</button>
+        </form>
+
+        <div id="success-message">
+            Protocol Initiated. Your request has been securely logged in the GSU database. Our systems will analyze your profile and transmit a Google Meet mentor link to your comms shortly.
+        </div>
+    </div>
+
+    <script>
+        // Simple script to handle form submission illusion until backend is connected
+        document.getElementById('mentor-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent page reload
+            this.style.display = 'none'; // Hide the form
+            document.getElementById('success-message').style.display = 'block'; // Show success message
+        });
+    </script>
+
+</body>
+</html>
