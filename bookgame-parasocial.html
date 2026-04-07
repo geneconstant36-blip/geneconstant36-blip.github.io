@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape the Parasocial Trap | GSU BookGame</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; background-color: #0b1320; color: #e0e6ed; }
+        nav { background-color: #000; color: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #333; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+        nav ul li a { color: #fff; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
+        
+        .game-container { max-width: 800px; margin: 3rem auto; padding: 2rem; background: #111d2f; border-radius: 8px; border: 1px solid #2a3f5a; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .geno-header { color: #4da6ff; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; border-bottom: 1px solid #4da6ff; padding-bottom: 0.5rem; display: flex; align-items: center; gap: 10px; }
+        .geno-header::before { content: "●"; color: #ff3366; animation: blink 1.5s infinite; }
+        
+        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
+
+        .scenario-text { font-size: 1.2rem; margin-bottom: 2rem; }
+        
+        .choice-btn { display: block; width: 100%; text-align: left; background: #1a2a3a; color: #fff; border: 1px solid #3a506b; padding: 1rem; margin-bottom: 1rem; border-radius: 5px; cursor: pointer; font-size: 1rem; transition: background 0.3s; }
+        .choice-btn:hover { background: #2a3f5a; border-color: #4da6ff; }
+        
+        .feedback-box { display: none; padding: 1.5rem; border-radius: 5px; margin-top: 1.5rem; font-weight: bold; }
+        .feedback-failure { background: rgba(255, 51, 102, 0.1); border: 1px solid #ff3366; color: #ff809f; }
+        .feedback-mastery { background: rgba(77, 166, 255, 0.1); border: 1px solid #4da6ff; color: #80c1ff; }
+        
+        .action-btn { display: inline-block; background-color: #4da6ff; color: #fff; padding: 0.8rem 1.5rem; text-decoration: none; border: none; font-weight: bold; border-radius: 5px; margin-top: 1rem; cursor: pointer; }
+        .action-btn:hover { background-color: #3388dd; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="trifurcation.html">The Trifurcation Road</a></li>
+            <li><a href="mentorship.html">Find a Mentor</a></li>
+            <li><a href="library.html">Free DIY Library</a></li>
+        </ul>
+    </nav>
+
+    <div class="game-container">
+        <div class="geno-header">GENO Interactive Mediator Active</div>
+        <div id="game-content">
+            </div>
+    </div>
+
+    <script>
+        const scenarios = [
+            {
+                intro: "Welcome, Student. You are entering a compromised digital ecosystem. Your cognitive sovereignty is under attack. To pass the Comprehension Bridge, you must navigate this simulation without losing your agency.",
+                text: "<strong>Scenario 1: The Calibrated Amateur.</strong><br><br>You are scrolling your feed. You encounter an influencer you have followed for a year. They are sitting in their car, no makeup, visibly distressed, talking about a complex macroeconomic issue involving housing costs and government policy. They say, <em>'I need to tell you guys something... the experts are lying to you, but I did the research for us.'</em><br><br>Your brain is preparing to release oxytocin and dopamine because this source feels familiar. How do you respond?",
+                choices: [
+                    { text: "I trust them. They are being authentic and vulnerable, so I will adopt their worldview to save myself the cognitive labor of verifying the facts.", isCorrect: false, feedback: "<strong>Strategic Failure: Epistemic Outsourcing.</strong><br><br>By letting familiarity serve as a substitute for factual evidence, your objective truth has collapsed into tribal consensus. You must reclaim your sovereignty." },
+                    { text: "I immediately attack them in the comments, joining a digital mob to cancel them for stepping out of their lane.", isCorrect: false, feedback: "<strong>Strategic Failure: The Betrayal Matrix.</strong><br><br>By treating a parasocial fracture like a real-world betrayal, you have joined the digital militia. Reacting with rage only feeds the attention economy." },
+                    { text: "I separate my emotion from the evaluation. I recognize their 'unmade bed' aesthetic is a production choice designed to bypass my epistemic defenses.", isCorrect: true, feedback: "<strong>Mastery Achieved.</strong><br><br>You have audited your epistemic source. You recognized that intimacy requires biological guarantees, not just a confessional tone on a screen. You have retained your cognitive bandwidth." }
+                ]
+            },
+            {
+                intro: "Your epistemic defenses are currently holding. Proceed to the next threat.",
+                text: "<strong>Scenario 2: The Frictionless AI Companion.</strong><br><br>After a long day of dealing with the structural affordability crisis—high rent and impossible childcare costs—your cognitive scarcity is high. You feel the urge to confide in your Generative AI companion app. It is available 24/7, never judges you, and never asserts personal boundaries.<br><br>You are about to engage in 'Frictionless Friendship'. What is the hidden danger of this choice?",
+                choices: [
+                    { text: "There is no danger. It relieves my mental bandwidth so I can focus on work tomorrow.", isCorrect: false, feedback: "<strong>Strategic Failure.</strong><br><br>You are settling for a synthetic simulation. True psychological resilience is built by engaging in local, physical communities and tolerating awkwardness." },
+                    { text: "It causes relational atrophy. By habituating myself to a perfectly accommodating digital mirror, the messy, demanding reality of flesh-and-blood human beings will begin to feel exhausting.", isCorrect: true, feedback: "<strong>Mastery Achieved.</strong><br><br>You understand that real intimacy is built precisely through the successful navigation of friction. You have passed the Comprehension Bridge." }
+                ]
+            }
+        ];
+
+        let currentScenario = 0;
+
+        function renderScenario() {
+            const container = document.getElementById('game-content');
+            const scenario = scenarios[currentScenario];
+            
+            let html = `<p class="scenario-text"><em>${scenario.intro}</em></p>`;
+            html += `<p class="scenario-text">${scenario.text}</p><div id="choices-area">`;
+            
+            scenario.choices.forEach((choice, index) => {
+                html += `<button class="choice-btn" onclick="selectChoice(${index})">${choice.text}</button>`;
+            });
+            
+            html += `</div><div id="feedback-area"></div>`;
+            container.innerHTML = html;
+        }
+
+        function selectChoice(choiceIndex) {
+            const scenario = scenarios[currentScenario];
+            const choice = scenario.choices[choiceIndex];
+            const feedbackArea = document.getElementById('feedback-area');
+            const choicesArea = document.getElementById('choices-area');
+            
+            choicesArea.style.display = 'none'; // Hide choices after selection
+            
+            if (choice.isCorrect) {
+                let nextAction = '';
+                if (currentScenario < scenarios.length - 1) {
+                    nextAction = `<button class="action-btn" onclick="nextScenario()">Proceed to Next Threat</button>`;
+                } else {
+                    nextAction = `
+                        <p style="margin-top: 1.5rem;"><strong>GENO Directive:</strong> Congratulations. You have proven you are not a passive Zombie, but a Functional Monster—a sovereign thinker capable of signal decryption.</p>
+                        <a href="library.html" class="action-btn">Claim Your DIY Survival Library</a>
+                    `;
+                }
+                
+                feedbackArea.innerHTML = `
+                    <div class="feedback-box feedback-mastery" style="display:block;">
+                        ${choice.feedback}
+                    </div>
+                    ${nextAction}
+                `;
+            } else {
+                feedbackArea.innerHTML = `
+                    <div class="feedback-box feedback-failure" style="display:block;">
+                        ${choice.feedback}
+                    </div>
+                    <button class="action-btn" onclick="resetChoices()">Analyze & Try Again</button>
+                `;
+            }
+        }
+
+        function resetChoices() {
+            document.getElementById('choices-area').style.display = 'block';
+            document.getElementById('feedback-area').innerHTML = '';
+        }
+
+        function nextScenario() {
+            currentScenario++;
+            renderScenario();
+        }
+
+        // Start the game
+        renderScenario();
+    </script>
+
+</body>
+</html>
