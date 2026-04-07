@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Epistemic Crisis | GSU Platinum Track</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; background-color: #12091f; color: #e6e0f8; }
+        nav { background-color: #000; color: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #333; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+        nav ul li a { color: #fff; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
+        
+        .game-container { max-width: 850px; margin: 3rem auto; padding: 2rem; background: #1c1331; border-radius: 8px; border: 1px solid #4a3b69; box-shadow: 0 10px 40px rgba(0,0,0,0.8); }
+        .geno-header { color: #b388ff; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; border-bottom: 1px solid #b388ff; padding-bottom: 0.5rem; display: flex; align-items: center; gap: 10px; }
+        .geno-header::before { content: "◆"; color: #b388ff; animation: pulse 1s infinite alternate; }
+        
+        @keyframes pulse { 0% { opacity: 0.4; text-shadow: 0 0 5px #b388ff; } 100% { opacity: 1; text-shadow: 0 0 20px #b388ff; } }
+
+        .scenario-text { font-size: 1.15rem; margin-bottom: 2rem; color: #e6e0f8; }
+        
+        .choice-btn { display: block; width: 100%; text-align: left; background: #2d1f47; color: #fff; border: 1px solid #4a3b69; padding: 1rem; margin-bottom: 1rem; border-radius: 5px; cursor: pointer; font-size: 1rem; transition: all 0.3s; }
+        .choice-btn:hover { background: #3d2b63; border-color: #b388ff; }
+        
+        .feedback-box { display: none; padding: 1.5rem; border-radius: 5px; margin-top: 1.5rem; font-weight: bold; line-height: 1.5; }
+        .feedback-failure { background: rgba(255, 82, 82, 0.15); border: 1px solid #ff5252; color: #ff8a80; }
+        .feedback-mastery { background: rgba(179, 136, 255, 0.15); border: 1px solid #b388ff; color: #d1c4e9; }
+        
+        .action-btn { display: inline-block; background-color: #b388ff; color: #12091f; padding: 0.8rem 1.5rem; text-decoration: none; border: none; font-weight: bold; border-radius: 5px; margin-top: 1rem; cursor: pointer; transition: background 0.3s; }
+        .action-btn:hover { background-color: #7e57c2; color: #fff; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="trifurcation.html">The Trifurcation Road</a></li>
+            <li><a href="mentorship.html">Find a Mentor</a></li>
+            <li><a href="library.html">Free DIY Library</a></li>
+        </ul>
+    </nav>
+
+    <div class="game-container">
+        <div class="geno-header">GENO Platinum Track Active: Cross-Text Mastery</div>
+        <div id="game-content">
+            </div>
+    </div>
+
+    <script>
+        const scenarios = [
+            {
+                intro: "Welcome to the Platinum Track. You are operating at the peak of the Comprehension Bridge. You must now navigate the modern Epistemic Crisis.",
+                text: "<strong>Simulation 1: The Liar's Dividend</strong><br><br>During a tense geopolitical standoff, a highly realistic video surfaces showing a prominent leader declaring a preemptive military strike. The video triggers immediate panic and a stock market flash crash. Experts suspect it is a deepfake, but your social feed is flooded with people demanding immediate retaliation.<br><br>How do you apply your cognitive sovereignty?",
+                choices: [
+                    { text: "Share the video with a warning that it 'might be fake' to ensure my network is prepared for the worst.", isCorrect: false, feedback: "<strong>Strategic Failure: Viral Contagion.</strong><br><br>You have acted as an unwitting amplifier. By sharing the deepfake, even with a warning, you triggered algorithmic amplification. You provided the necessary 'oxygen' to a state-sponsored information operation." },
+                    { text: "Declare that since video and audio can now be faked, no news or institutional evidence can ever be trusted again.", isCorrect: false, feedback: "<strong>Strategic Failure: The Liar's Dividend.</strong><br><br>You have succumbed to the exact psychological goal of the deepfake era. By adopting total cynicism, you grant malicious actors plausible deniability to dismiss actual, factual evidence as 'AI fabrications.' You have surrendered your epistemic foundation." },
+                    { text: "Initiate an epistemic pause. I refuse to share the content, recognizing my biological vulnerability to video format. I seek cross-verification through decentralized, cryptographic provenance protocols.", isCorrect: true, feedback: "<strong>Mastery Achieved.</strong><br><br>You successfully navigated the illusion. You suppressed the emotional urge to engage, effectively quarantining the synthetic contagion and protecting your network's shared reality." }
+                ]
+            },
+            {
+                intro: "Your epistemic defenses held against synthetic media. Now, prepare for the Autonomous Swarm.",
+                text: "<strong>Simulation 2: The Astroturf Consensus</strong><br><br>You notice a trending political topic on your primary social network. Hundreds of accounts are posting the exact same highly polarized, outrage-inducing narrative about a local civic issue. The engagement metrics are astronomical. It feels like 'everyone' agrees.<br><br>As a sovereign thinker, what is your diagnosis of this environment?",
+                choices: [
+                    { text: "It is an autonomous LLM propaganda swarm. The high velocity and unified narrative indicate 'astroturfing' designed to trick the platform's algorithm and manufacture an illusion of grassroots consensus.", isCorrect: true, feedback: "<strong>Mastery Achieved.</strong><br><br>You identified the mechanism. You recognize that the algorithm is a preference amplifier, not a truth detector. You have successfully decoupled objective reality from synthetic social proof." },
+                    { text: "I must engage with these accounts immediately in the comments to debate them and correct the record before the narrative spreads further.", isCorrect: false, feedback: "<strong>Strategic Failure: Feeding the Machine.</strong><br><br>You have engaged the bot swarm. Decentralized AI agents do not care about your counter-arguments; they only require your engagement metrics to push their fringe narrative into the mainstream. You have fed the algorithm." }
+                ]
+            }
+        ];
+
+        let currentScenario = 0;
+
+        function renderScenario() {
+            const container = document.getElementById('game-content');
+            const scenario = scenarios[currentScenario];
+            
+            let html = `<p class="scenario-text"><em>${scenario.intro}</em></p>`;
+            html += `<p class="scenario-text">${scenario.text}</p><div id="choices-area">`;
+            
+            scenario.choices.forEach((choice, index) => {
+                html += `<button class="choice-btn" onclick="selectChoice(${index})">${choice.text}</button>`;
+            });
+            
+            html += `</div><div id="feedback-area"></div>`;
+            container.innerHTML = html;
+        }
+
+        function selectChoice(choiceIndex) {
+            const scenario = scenarios[currentScenario];
+            const choice = scenario.choices[choiceIndex];
+            const feedbackArea = document.getElementById('feedback-area');
+            const choicesArea = document.getElementById('choices-area');
+            
+            choicesArea.style.display = 'none'; 
+            
+            if (choice.isCorrect) {
+                let nextAction = '';
+                if (currentScenario < scenarios.length - 1) {
+                    nextAction = `<button class="action-btn" onclick="nextScenario()">Proceed to Final Challenge</button>`;
+                } else {
+                    nextAction = `
+                        <p style="margin-top: 1.5rem;"><strong>GENO Directive:</strong> Platinum Track Completed. You have mastered the Trifurcation Road. You are now equipped with the Abstract Mechanics necessary to operate as a Sovereign Civilizational Builder.</p>
+                        <a href="mentorship.html" class="action-btn">Connect with your Mentor</a>
+                    `;
+                }
+                
+                feedbackArea.innerHTML = `
+                    <div class="feedback-box feedback-mastery" style="display:block;">
+                        ${choice.feedback}
+                    </div>
+                    ${nextAction}
+                `;
+            } else {
+                feedbackArea.innerHTML = `
+                    <div class="feedback-box feedback-failure" style="display:block;">
+                        ${choice.feedback}
+                    </div>
+                    <button class="action-btn" style="background:#ff5252; color:#fff;" onclick="resetChoices()">Re-evaluate Protocol</button>
+                `;
+            }
+        }
+
+        function resetChoices() {
+            document.getElementById('choices-area').style.display = 'block';
+            document.getElementById('feedback-area').innerHTML = '';
+        }
+
+        function nextScenario() {
+            currentScenario++;
+            renderScenario();
+        }
+
+        renderScenario();
+    </script>
+
+</body>
+</html>
