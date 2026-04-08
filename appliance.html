@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Appliance Repair | Play, Hear, See | GSU</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; background-color: #f4f6f7; color: #2c3e50; }
+        
+        /* Navigation */
+        nav { background-color: #1a252f; color: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid #00e676; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+        nav ul li a { color: #fff; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: color 0.3s; }
+        nav ul li a:hover { color: #00e676; }
+
+        /* Hero Section */
+        .hero { background: #2c3e50; color: #fff; padding: 4rem 2rem; text-align: center; border-bottom: 5px solid #00e676; }
+        .hero h1 { color: #fff; font-size: 3rem; margin-bottom: 1rem; margin-top: 0; text-transform: uppercase; letter-spacing: 1px; }
+        .hero h1 span { color: #00e676; }
+        .hero p { font-size: 1.3rem; max-width: 800px; margin: 0 auto; color: #bdc3c7; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 3rem 2rem; }
+        h2 { color: #2c3e50; border-bottom: 2px solid #00e676; padding-bottom: 0.5rem; margin-top: 3rem; display: flex; align-items: center; gap: 10px; text-transform: uppercase; }
+        
+        /* Media Boxes */
+        .media-box { background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 2rem; border-left: 5px solid #00e676; }
+        
+        /* Lyrics Box */
+        .lyrics-box { background: #34495e; color: #ecf0f1; padding: 2rem; border-radius: 8px; margin-top: 1.5rem; font-family: 'Georgia', serif; font-style: italic; line-height: 1.8; border-left: 5px solid #00e676; }
+        .lyrics-box h4 { color: #00e676; margin-top: 0; font-family: 'Segoe UI', sans-serif; font-style: normal; text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* Game Box */
+        .game-box { background: #e8f8f5; color: #2c3e50; padding: 2.5rem; border-radius: 8px; margin-top: 2rem; border: 1px solid #a3e4d7; }
+        .geno-header { color: #117a65; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; }
+        .choice-btn { display: block; width: 100%; text-align: left; background: #fff; color: #2c3e50; border: 1px solid #73c6b6; padding: 1rem; margin-bottom: 1rem; border-radius: 5px; cursor: pointer; transition: all 0.3s; font-size: 1rem; font-weight: bold; }
+        .choice-btn:hover { background: #d1f2eb; border-color: #00e676; }
+        #feedback-area { display: none; padding: 1.5rem; border-radius: 5px; margin-top: 1.5rem; font-weight: bold; }
+        
+        /* CTA Box */
+        .purchase-box { background: #1a252f; padding: 3rem; text-align: center; border-radius: 8px; margin-top: 4rem; border: 2px dashed #00e676; color: #fff;}
+        .btn { display: inline-block; background-color: #00e676; color: #1a252f; padding: 1rem 2rem; text-decoration: none; font-weight: bold; font-size: 1.2rem; border-radius: 5px; margin-top: 1.5rem; transition: background 0.3s; text-transform: uppercase; }
+        .btn:hover { background-color: #00c853; color: #fff; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="trifurcation.html">The Trifurcation Road</a></li>
+            <li><a href="library.html">The GSU Archive</a></li>
+            <li><a href="radio.html">Radio Lounge</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h1>Basic Appliance Repair: <span>Fix the Machine</span></h1>
+        <p>A washing machine is just a metal box with a motor, a pump, and a switch. Stop throwing expensive machinery into the landfill and master the mechanics of the modern home.</p>
+    </div>
+
+    <div class="container">
+        
+        <h2>🎧 HEAR: The Voice of Sovereignty</h2>
+        <div class="media-box">
+            <p><strong>Listen to the Podcast:</strong> Dr. Constant destroys the "Black Box" illusion of modern appliances and teaches the logic of electromechanical troubleshooting. <em>(Placeholder for Buzzsprout embed)</em></p>
+            <div id="buzzsprout-player-placeholder" style="background:#f4f6f7; padding:2rem; text-align:center; border-radius:4px; color:#7f8c8d; margin-bottom: 2rem;">
+                <em>[ Buzzsprout MP3 Player Embed Code Goes Here ]</em>
+            </div>
+
+            <h3 style="color: #2c3e50; margin-top: 2rem; border-top: 1px solid #ecf0f1; padding-top: 1rem;">The GSU Anthem: The Rotor and the Relay</h3>
+            <audio controls style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
+                <source src="The-Rotor-and-the-Relay.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <div class="lyrics-box">
+                <h4>Official Lyrics</h4>
+                It stopped spinning on a Tuesday, left the water in the drum<br>
+                You stare at the metal, feeling helpless and dumb<br>
+                The screen is flashing error, the motor’s gone dead<br>
+                There’s a voice saying "Trash it, buy a new one instead."<br>
+                But you paid for the steel, and you paid for the glass<br>
+                We don’t throw it all away when we’re out of the gas!<br><br>
+                
+                <strong>CHORUS:</strong><br>
+                Get a grip on the rotor! Test the relay and the wire!<br>
+                You don’t throw the whole machine into the fire!<br>
+                Unplug it from the wall, take the panel off the back<br>
+                Find the continuity, get it back on the track!<br>
+                It’s only switches and belts, it’s not a mystery to solve<br>
+                Fix the machine! Watch the cylinder revolve!
+            </div>
+        </div>
+
+        <h2>🕹️ PLAY: Diagnostic Logic Simulator</h2>
+        <p>Test your troubleshooting logic before you grab the multimeter. GENO is active.</p>
+        
+        <div class="game-box">
+            <div class="geno-header">● GENO INTERACTIVE MEDIATOR ACTIVE</div>
+            <div id="scenario-content"></div>
+        </div>
+
+        <div class="purchase-box">
+            <h2 style="margin-top:0; justify-content:center; border:none; color:#00e676;">Take Back the Machinery</h2>
+            <p>You have played the simulation and heard the anthem. Now, acquire the complete guide to testing continuity, replacing relays, and bypassing the consumer cycle.</p>
+            <a href="Basic-Appliance-Repair.pdf" class="btn" target="_blank">Download PDF Manual</a>
+        </div>
+
+    </div>
+
+    <script>
+        const questions = [
+            {
+                q: "A washing machine fills with water and agitates properly, but at the end of the cycle, it refuses to drain the water out of the drum. Applying First Principles thinking, what is the most logical first component to check?",
+                choices: [
+                    "The main electronic control board in the console.",
+                    "The water inlet valve connected to the wall.",
+                    "The drain pump filter for physical obstructions like coins or lint."
+                ],
+                correct: 2,
+                feedbackSuccess: "Mastery Achieved. You isolated the failure point. If the machine works perfectly until the 'output' phase, the physical pump or hose is the most likely bottleneck.",
+                feedbackFail: "Strategic Failure. You jumped to complex, expensive parts before checking the physical reality. Always check for a physical obstruction in the drain pump first."
+            },
+            {
+                q: "When a clothing dryer runs (the drum spins and air blows) but produces absolutely no heat, what is the most common and inexpensive mechanical failure?",
+                choices: [
+                    "A burnt-out heating element or a tripped thermal fuse.",
+                    "A broken drive belt.",
+                    "A faulty 220V wall outlet."
+                ],
+                correct: 0,
+                feedbackSuccess: "Mastery Achieved. The machine is receiving power and mechanical movement, meaning the motor works. The failure is strictly in the thermal circuit.",
+                feedbackFail: "Strategic Failure. If the drum is spinning, the belt and the outlet are functioning perfectly. The failure must exist within the heating element circuit."
+            },
+            {
+                q: "What is the mandatory first step before removing the back panel of ANY major appliance to test a switch or a relay?",
+                choices: [
+                    "Turn the dial to the 'OFF' position.",
+                    "Unplug the machine entirely from the wall receptacle to achieve a Zero Energy state.",
+                    "Ground yourself with a static wrist strap."
+                ],
+                correct: 1,
+                feedbackSuccess: "Mastery Achieved. A switch set to 'OFF' does not remove live voltage from the machine's internal wiring. You must physically break the connection to the grid.",
+                feedbackFail: "Strategic Failure. The 'OFF' dial only stops the motor; 120V or 240V of lethal current is still live inside the machine until the plug is pulled from the wall."
+            }
+        ];
+
+        let currentQ = 0;
+
+        function loadQuestion() {
+            const container = document.getElementById('scenario-content');
+            if (currentQ >= questions.length) {
+                container.innerHTML = `<h3 style="color:#117a65;">Simulation Complete</h3><p>You are ready to fix the machine.</p>`;
+                return;
+            }
+            const qData = questions[currentQ];
+            let html = `<p style="font-size: 1.15rem; margin-bottom: 2rem;"><strong>Scenario ${currentQ + 1}:</strong> ${qData.q}</p><div id="choices">`;
+            qData.choices.forEach((choice, index) => {
+                html += `<button class="choice-btn" onclick="checkAnswer(${index})">${choice}</button>`;
+            });
+            html += `</div><div id="feedback-area"></div>`;
+            container.innerHTML = html;
+        }
+
+        function checkAnswer(selectedIndex) {
+            const qData = questions[currentQ];
+            const isCorrect = (selectedIndex === qData.correct);
+            document.getElementById('choices').style.display = 'none';
+            const feedbackArea = document.getElementById('feedback-area');
+            feedbackArea.style.display = 'block';
+            
+            if(isCorrect) {
+                feedbackArea.style.background = 'rgba(0, 230, 118, 0.1)';
+                feedbackArea.style.border = '1px solid #00e676';
+                feedbackArea.style.color = '#117a65';
+                feedbackArea.innerHTML = `<p>${qData.feedbackSuccess}</p><button class="btn" style="padding:0.5rem 1rem; margin-top:1rem;" onclick="nextQuestion()">Proceed</button>`;
+            } else {
+                feedbackArea.style.background = 'rgba(255, 51, 102, 0.1)';
+                feedbackArea.style.border = '1px solid #ff3366';
+                feedbackArea.style.color = '#cc0000';
+                feedbackArea.innerHTML = `<p>${qData.feedbackFail}</p><button class="btn" style="padding:0.5rem 1rem; margin-top:1rem; background-color:#ff3366; color:#fff;" onclick="retryQuestion()">Re-evaluate</button>`;
+            }
+        }
+
+        function retryQuestion() {
+            document.getElementById('choices').style.display = 'block';
+            document.getElementById('feedback-area').style.display = 'none';
+        }
+
+        function nextQuestion() {
+            currentQ++;
+            loadQuestion();
+        }
+        loadQuestion();
+    </script>
+</body>
+</html>
