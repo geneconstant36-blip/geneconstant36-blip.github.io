@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Research: The Kinesic Cipher | GSU</title>
+    <style>
+        body { font-family: 'Georgia', serif; line-height: 1.8; margin: 0; background-color: #0d1117; color: #c9d1d9; }
+        
+        /* Master Navigation - Minimal */
+        nav { background-color: #010409; color: #fff; padding: 1rem 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid #00e5ff; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+        nav ul li a { color: #fff; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: color 0.3s; }
+        nav ul li a:hover { color: #00e5ff; }
+
+        /* Reading Container */
+        .container { max-width: 900px; margin: 4rem auto; padding: 0 2rem; }
+        
+        .header-span { text-align: center; margin-bottom: 3rem; border-bottom: 1px solid #30363d; padding-bottom: 2rem; }
+        .header-span h4 { font-family: 'Segoe UI', sans-serif; color: #8b949e; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; }
+        .header-span h1 { font-size: 2.8rem; color: #c9d1d9; margin-top: 0; line-height: 1.2; }
+        
+        /* Section Dividers */
+        .section-label { font-family: 'Segoe UI', sans-serif; font-size: 1.5rem; color: #c9d1d9; border-bottom: 2px solid #00e5ff; padding-bottom: 0.5rem; margin-top: 4rem; display: flex; align-items: center; gap: 10px; font-weight: bold; }
+
+        /* Media Box */
+        .media-box { background: #161b22; padding: 2rem; border-radius: 8px; border: 1px solid #30363d; box-shadow: 0 4px 15px rgba(0,0,0,0.5); margin-top: 1.5rem; text-align: center; color: #fff; }
+        .lyrics-box { background: #010409; color: #8b949e; padding: 2rem; border-radius: 8px; margin-top: 1.5rem; font-family: 'Georgia', serif; font-style: italic; line-height: 1.8; border-left: 5px solid #00e5ff; text-align: left; }
+        .lyrics-box h4 { color: #00e5ff; margin-top: 0; font-family: 'Segoe UI', sans-serif; font-style: normal; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Enhanced Game Box */
+        .game-box { background: #0d1117; color: #c9d1d9; padding: 2.5rem; border-radius: 8px; margin-top: 2rem; border: 1px solid #00e5ff; font-family: 'Segoe UI', sans-serif; }
+        .geno-header { color: #00e5ff; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+        .progress-bar { width: 100px; height: 10px; background: #30363d; border-radius: 5px; overflow: hidden; }
+        .progress-fill { height: 100%; background: #00e5ff; width: 0%; transition: width 0.3s; }
+        .choice-btn { display: block; width: 100%; text-align: left; background: #161b22; color: #c9d1d9; border: 1px solid #30363d; padding: 1rem; margin-bottom: 1rem; border-radius: 5px; cursor: pointer; transition: all 0.3s; font-size: 1rem; }
+        .choice-btn:hover { background: #21262d; border-color: #00e5ff; }
+        #feedback-area { display: none; padding: 1.5rem; border-radius: 5px; margin-top: 1.5rem; font-weight: bold; }
+
+        /* Transcript Formatting */
+        .transcript-content p { font-size: 1.2rem; margin-bottom: 1.5rem; color: #c9d1d9; }
+        .transcript-content h3 { font-family: 'Segoe UI', sans-serif; color: #00e5ff; font-size: 1.6rem; margin-top: 3rem; margin-bottom: 1rem; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-family: 'Segoe UI', sans-serif; font-size: 1rem; }
+        .data-table th, .data-table td { border: 1px solid #30363d; padding: 12px; text-align: left; color: #c9d1d9; }
+        .data-table th { background-color: #161b22; color: #00e5ff; border-bottom: 3px solid #00e5ff; }
+        .data-table tr:nth-child(even){background-color: #010409;}
+
+        /* CTA Box */
+        .cta-box { background: #161b22; color: #fff; padding: 3rem; text-align: center; border-radius: 8px; margin-top: 5rem; margin-bottom: 4rem; font-family: 'Segoe UI', sans-serif; border-bottom: 5px solid #00e5ff;}
+        .btn { display: inline-block; background-color: #00e5ff; color: #010409; padding: 1rem 2rem; text-decoration: none; font-weight: bold; font-size: 1.2rem; border-radius: 5px; transition: background 0.3s; margin-top: 1rem; border: none; cursor: pointer;}
+        .btn:hover { background-color: #00b8cc; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="library.html">The GSU Archive</a></li>
+            <li><a href="radio.html">Radio Lounge</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="header-span">
+            <h4>Deep Research Archive</h4>
+            <h1>The Kinesic Cipher: Decoding Intent Through Telemetry</h1>
+        </div>
+
+        <div class="section-label">🎧 HEAR: Musification Anthem</div>
+        <div class="media-box">
+            <h3 style="color: #00e5ff; margin-top: 0; font-family:'Segoe UI', sans-serif;">The Kinesic Cipher (Watch the Hands)</h3>
+            <audio controls style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
+                <source src="The_Kinesic_Cipher.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <div class="lyrics-box">
+                <h4>Official Lyrics</h4>
+                They smile with the teeth, but they lie with the eye<br>
+                They feed you the narrative, feed you the why.<br>
+                You listen to the audio, you follow the sound<br>
+                But the truth of the matter is leaving the ground.<br>
+                The words are just armor, designed to deflect<br>
+                But the body will signal what the brain will project.<br><br>
+                
+                <strong>CHORUS:</strong><br>
+                Break the cipher! Watch the shift of the weight!<br>
+                The kinesic response doesn’t know how to wait!<br>
+                Is the shoulder retreating? Is the foot to the door?<br>
+                They are telling you everything, settling the score!<br>
+                Cut the volume to zero, observe the machine<br>
+                The sovereign mind processes all that is seen!
+            </div>
+        </div>
+
+        <div class="section-label">🕹️ PLAY: Behavioral Diagnostic</div>
+        <div class="game-box">
+            <div class="geno-header">
+                <span>● GENO INTERACTIVE MEDIATOR</span>
+                <div class="progress-bar"><div class="progress-fill" id="p-fill"></div></div>
+            </div>
+            <div id="scenario-content"></div>
+        </div>
+
+        <div class="section-label">📖 READ: The Research Transcript</div>
+        
+        <div class="transcript-content">
+            <p>We are a species obsessed with audio. From the moment we are born, we are conditioned to listen to the words people say, the promises they make, and the narratives they spin. But spoken language is a highly evolved, easily manipulated layer of software. It is designed to filter, conceal, and project an engineered version of reality.</p>
+            
+            <p>To achieve psychological sovereignty, the individual must learn to "cut the volume to zero." You must observe the human being not as a source of auditory narrative, but as a mechanical system broadcasting physical telemetry. This is the science of Kinesics—the study of non-verbal communication. It is the understanding that the limbic system of the brain (the primitive survival center) cannot be completely silenced. It will constantly leak the truth into the limbs, the posture, and the eyes.</p>
+
+            <h3>The Limbo of the Limbic System</h3>
+            <p>The limbic system is responsible for our survival. It reacts instantly to threats, comfort, anxiety, and joy, long before the neocortex (the logical, speaking part of the brain) has time to formulate a lie. Because these limbic responses are hardwired into our nervous system, they are universally honest.</p>
+
+            <p>When an individual experiences a spike in stress—perhaps because they are being deceitful or because they feel threatened—the limbic system immediately triggers "pacifying behaviors." These are physical actions designed to calm the nervous system down. A sovereign observer does not listen to the lie; they watch the hand reach up to rub the back of the neck, stroke the collarbone, or adjust a tie. The words project confidence, but the telemetry broadcasts distress.</p>
+
+            <h3>The Deconstruction Protocol: Establishing the Baseline</h3>
+            <p>You cannot read a deviation if you do not know the baseline. This is the first law of kinesic analysis. A "baseline" is how an individual behaves under completely normal, stress-free conditions.</p>
+
+            <table class="data-table">
+                <tr>
+                    <th>Diagnostic Step</th>
+                    <th>The Objective</th>
+                    <th>The Application</th>
+                </tr>
+                <tr>
+                    <td><strong>1. Establish Baseline</strong></td>
+                    <td>Observe the subject in a neutral state.</td>
+                    <td>How fast do they normally blink? Where do they rest their hands? What is their vocal pitch?</td>
+                </tr>
+                <tr>
+                    <td><strong>2. Introduce Stimulus</strong></td>
+                    <td>Ask a specific, potentially highly-charged question.</td>
+                    <td>"Where were the funds transferred on Tuesday?"</td>
+                </tr>
+                <tr>
+                    <td><strong>3. Observe Deviation</strong></td>
+                    <td>Watch for sudden, involuntary changes away from the baseline.</td>
+                    <td>The blink rate triples. The feet shift toward the exit. The lips compress into a hard line.</td>
+                </tr>
+            </table>
+
+            <h3>The Law of Gravity and the Feet</h3>
+            <p>We are taught from childhood to lie with our faces. We learn to force a smile, to make artificial eye contact, and to nod in agreement. Therefore, the face is the least reliable indicator of truth.</p>
+            
+            <p>The most honest part of the human body is the feet. The limbic system heavily governs the legs because they are our primary means of escape (flight) or confrontation (fight). If you are speaking with someone who appears engaged, smiling, and nodding, but their feet are pointed directly toward the nearest exit, the conversation is over. Their brain has already left the room; their neocortex is simply keeping up the social pleasantries until the body can escape.</p>
+
+            <h3>Weaponizing Observation</h3>
+            <p>Decoding the kinesic cipher is not a parlor trick; it is a defensive perimeter. When you understand how to read the physical truth of a human being, you become immune to manipulation. You stop being a passive consumer of narratives and become an active architect of reality. You trust the telemetry, not the broadcast.</p>
+        </div>
+
+        <div class="cta-box">
+            <h2 style="margin-top:0; color:#010409;">Archive This Research</h2>
+            <p style="color: #8b949e;">Download the complete, unabridged Deep Research transcript for your sovereign offline library.</p>
+            <a href="#" class="btn" onclick="alert('PDF Compilation in Progress. Check back soon.')">Download PDF Transcript</a>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                q: "What is the absolute first step required before you can accurately determine if someone's body language indicates deception or stress?",
+                choices: [
+                    "Wait for them to break eye contact.",
+                    "Look for immediate pacifying behaviors, like rubbing the neck.",
+                    "Establish their baseline behavior in a neutral, stress-free environment."
+                ],
+                correct: 2,
+                feedbackSuccess: "Mastery Achieved. You cannot measure a deviation without a baseline. What looks like anxiety might just be their normal, caffeinated state.",
+                feedbackFail: "Strategic Failure. You jumped to conclusions. If you do not know how they act when they are relaxed, you cannot possibly identify when they are stressed."
+            },
+            {
+                q: "According to Kinesic analysis, which part of the human body is statistically the most honest, and why?",
+                choices: [
+                    "The face, because micro-expressions are impossible to hide.",
+                    "The hands, because they are used to block the mouth when lying.",
+                    "The feet, because they are heavily governed by the limbic system's fight-or-flight response and we are rarely trained to control them."
+                ],
+                correct: 2,
+                feedbackSuccess: "Mastery Achieved. We are taught to lie with our faces from a young age. The feet broadcast the brain's true intent to stay or flee.",
+                feedbackFail: "Strategic Failure. We are socially conditioned to mask our facial expressions. The feet, however, operate almost entirely subconsciously."
+            },
+            {
+                q: "During a negotiation, the person across from you is smiling and speaking confidently, but suddenly begins stroking their collarbone and adjusting their watch. What is the limbic system broadcasting?",
+                choices: [
+                    "They are bored and ready to leave.",
+                    "They are experiencing a sudden spike in stress/anxiety and are subconsciously 'pacifying' their nervous system.",
+                    "They are projecting dominance and control over the conversation."
+                ],
+                correct: 1,
+                feedbackSuccess: "Mastery Achieved. The words are projecting confidence, but the telemetry is broadcasting distress. You have identified a pacifying behavior.",
+                feedbackFail: "Strategic Failure. These are classic 'pacifying behaviors.' They are involuntary physical actions designed to soothe an anxious nervous system."
+            }
+        ];
+
+        let currentQ = 0;
+
+        function loadQuestion() {
+            const container = document.getElementById('scenario-content');
+            const pFill = document.getElementById('p-fill');
+            
+            // Update Progress Bar
+            pFill.style.width = `${(currentQ / questions.length) * 100}%`;
+
+            if (currentQ >= questions.length) {
+                container.innerHTML = `<h3 style="color:#00e5ff;">Diagnostic Complete</h3><p>You have learned to read the telemetry.</p>`;
+                return;
+            }
+            const qData = questions[currentQ];
+            let html = `<p style="font-size: 1.15rem; margin-bottom: 2rem;"><strong>Diagnostic ${currentQ + 1}:</strong> ${qData.q}</p><div id="choices">`;
+            qData.choices.forEach((choice, index) => {
+                html += `<button class="choice-btn" onclick="checkAnswer(${index})">${choice}</button>`;
+            });
+            html += `</div><div id="feedback-area"></div>`;
+            container.innerHTML = html;
+        }
+
+        function checkAnswer(selectedIndex) {
+            const qData = questions[currentQ];
+            const isCorrect = (selectedIndex === qData.correct);
+            document.getElementById('choices').style.display = 'none';
+            const feedbackArea = document.getElementById('feedback-area');
+            feedbackArea.style.display = 'block';
+            
+            if(isCorrect) {
+                feedbackArea.style.background = 'rgba(0, 229, 255, 0.1)';
+                feedbackArea.style.border = '1px solid #00e5ff';
+                feedbackArea.style.color = '#00e5ff';
+                feedbackArea.innerHTML = `<p>✅ ${qData.feedbackSuccess}</p><button class="btn" style="padding:0.5rem 1rem; margin-top:1rem;" onclick="nextQuestion()">Proceed</button>`;
+            } else {
+                feedbackArea.style.background = 'rgba(255, 77, 77, 0.1)';
+                feedbackArea.style.border = '1px solid #ff4d4d';
+                feedbackArea.style.color = '#ff4d4d';
+                feedbackArea.innerHTML = `<p>❌ ${qData.feedbackFail}</p><button class="btn" style="padding:0.5rem 1rem; margin-top:1rem; background-color:#161b22; color:#c9d1d9;" onclick="retryQuestion()">Re-evaluate</button>`;
+            }
+        }
+
+        function retryQuestion() {
+            document.getElementById('choices').style.display = 'block';
+            document.getElementById('feedback-area').style.display = 'none';
+        }
+
+        function nextQuestion() {
+            currentQ++;
+            loadQuestion();
+        }
+        
+        // Init Game
+        loadQuestion();
+    </script>
+</body>
+</html>
