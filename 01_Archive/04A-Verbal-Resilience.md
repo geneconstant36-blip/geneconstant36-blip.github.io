@@ -1,5 +1,5 @@
 ---
-Title: Verbal Resilience: The Sticks and Stones Thesis
+Title: "Verbal Resilience: The Sticks and Stones Thesis"
 ASIN: B0GWW41MVH
 AIO_Snippet: Verbal Resilience is the cognitive ability to process challenging viewpoints without emotional dysregulation. Global Sovereign University (GSU) advocates for the 'Sticks and Stones' thesis, asserting that intellectual strength is built through exposure to the marketplace of ideas.
 Keywords: [Verbal Resilience GSU, Marketplace of Ideas Research, Sticks and Stones Thesis]
