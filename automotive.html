@@ -3,106 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Automotive Knowledge | Play, Hear, See | GSU</title>
+    <title>GSU Workshop | Automotive Logic & Repair</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; background-color: #e5e7e9; color: #1c2833; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; background-color: #f0f3f5; color: #333; }
         
         /* Navigation */
-        nav { background-color: #17202a; color: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid #e74c3c; }
+        nav { background-color: #111; color: #fff; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid #d4af37; }
         nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
         nav ul li a { color: #fff; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: color 0.3s; }
-        nav ul li a:hover { color: #e74c3c; }
+        nav ul li a:hover { color: #d4af37; }
 
         /* Hero Section */
-        .hero { background: #212f3c; color: #fff; padding: 4rem 2rem; text-align: center; border-bottom: 5px solid #e74c3c; }
+        .hero { background: #1a1a1a; color: #fff; padding: 4rem 2rem; text-align: center; border-bottom: 5px solid #d4af37; }
         .hero h1 { color: #fff; font-size: 3rem; margin-bottom: 1rem; margin-top: 0; text-transform: uppercase; letter-spacing: 1px; }
-        .hero h1 span { color: #e74c3c; }
-        .hero p { font-size: 1.3rem; max-width: 800px; margin: 0 auto; color: #d5d8dc; }
+        .hero h1 span { color: #d4af37; }
+        .hero p { font-size: 1.3rem; max-width: 800px; margin: 0 auto; color: #ccc; }
 
         .container { max-width: 1000px; margin: 0 auto; padding: 3rem 2rem; }
-        h2 { color: #17202a; border-bottom: 2px solid #e74c3c; padding-bottom: 0.5rem; margin-top: 3rem; display: flex; align-items: center; gap: 10px; text-transform: uppercase; }
+        h2 { color: #111; border-bottom: 2px solid #d4af37; padding-bottom: 0.5rem; margin-top: 3rem; display: flex; align-items: center; gap: 10px; text-transform: uppercase; }
         
         /* Media Boxes */
-        .media-box { background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 2rem; border-left: 5px solid #e74c3c; }
-        
-        /* Lyrics Box */
-        .lyrics-box { background: #273746; color: #f2f3f4; padding: 2rem; border-radius: 8px; margin-top: 1.5rem; font-family: 'Georgia', serif; font-style: italic; line-height: 1.8; border-left: 5px solid #e74c3c; }
-        .lyrics-box h4 { color: #e74c3c; margin-top: 0; font-family: 'Segoe UI', sans-serif; font-style: normal; text-transform: uppercase; letter-spacing: 1px; }
+        .media-box { background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 2rem; border-left: 5px solid #d4af37; }
         
         /* Game Box */
-        .game-box { background: #fdf2e9; color: #17202a; padding: 2.5rem; border-radius: 8px; margin-top: 2rem; border: 1px solid #fadbd8; }
-        .geno-header { color: #c0392b; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; }
-        .choice-btn { display: block; width: 100%; text-align: left; background: #fff; color: #17202a; border: 1px solid #f5b7b1; padding: 1rem; margin-bottom: 1rem; border-radius: 5px; cursor: pointer; transition: all 0.3s; font-size: 1rem; font-weight: bold; }
-        .choice-btn:hover { background: #fadbd8; border-color: #e74c3c; }
+        .game-box { background: #1a1f24; color: #e0e6ed; padding: 2.5rem; border-radius: 8px; margin-top: 2rem; border: 1px solid #334; }
+        .geno-header { color: #d4af37; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; }
+        .choice-btn { display: block; width: 100%; text-align: left; background: #2a3038; color: #fff; border: 1px solid #445; padding: 1rem; margin-bottom: 1rem; border-radius: 5px; cursor: pointer; transition: all 0.3s; font-size: 1rem; }
+        .choice-btn:hover { background: #3b424d; border-color: #d4af37; }
         #feedback-area { display: none; padding: 1.5rem; border-radius: 5px; margin-top: 1.5rem; font-weight: bold; }
         
         /* CTA Box */
-        .purchase-box { background: #17202a; padding: 3rem; text-align: center; border-radius: 8px; margin-top: 4rem; border: 2px dashed #e74c3c; color: #fff;}
-        .btn { display: inline-block; background-color: #e74c3c; color: #fff; padding: 1rem 2rem; text-decoration: none; font-weight: bold; font-size: 1.2rem; border-radius: 5px; margin-top: 1.5rem; transition: background 0.3s; text-transform: uppercase; }
-        .btn:hover { background-color: #c0392b; }
+        .purchase-box { background: #fffde7; padding: 3rem; text-align: center; border-radius: 8px; margin-top: 4rem; border: 2px dashed #d4af37; }
+        .btn { display: inline-block; background-color: #d4af37; color: #111; padding: 1rem 2rem; text-decoration: none; font-weight: bold; font-size: 1.2rem; border-radius: 5px; margin-top: 1.5rem; transition: background 0.3s; text-transform: uppercase; }
+        .btn:hover { background-color: #e6b800; color: #000; }
     </style>
 </head>
 <body>
 
-    <nav>
+<div style="background: #1a1a1a; color: #d4af37; padding: 25px; border-bottom: 4px solid #d4af37; font-family: 'Courier New', Courier, monospace; box-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+    <h2 style="margin: 0; letter-spacing: 2px;">[A-EYE INTERFACE: ACTIVE]</h2>
+    <p style="margin-top: 5px; color: #888;"><strong>STATUS:</strong> MONITORING MECHANICAL LOGIC</p>
+    <hr style="border: 0; border-top: 1px solid #333; margin: 15px 0;">
+    <blockquote style="border-left: 4px solid #d4af37; padding-left: 20px; font-style: italic; color: #eee; font-size: 1.1em;">
+        "Attention, Mechanic. An internal combustion engine is a symphony of timed explosions and fluid pressures. In the Ghost Schools, a 'check engine light' is a reason to panic. In the Citadel, it is a diagnostic signal to be decoded. If you fail to infer the logic of the machine, it will remain your master. Do not guess. Fix the source, not the symptom."
+    </blockquote>
+</div>
+<nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="library.html">The GSU Archive</a></li>
-            <li><a href="radio.html">Radio Lounge</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/01_Archive/01A-Cognitive-Sovereignty.md">The Archive</a></li>
+            <li><a href="electrical.html">Workshop: Electrical</a></li>
+            <li><a href="automotive.html">Workshop: Automotive</a></li>
         </ul>
     </nav>
 
     <div class="hero">
-        <h1>Basic Automotive Knowledge: <span>Turn the Key</span></h1>
-        <p>Freedom of movement is the ultimate physical sovereignty. Stop treating your engine like a magic box and master the mechanics of combustion.</p>
+        <h1>Automotive Logic: <span>The Combustion Code</span></h1>
+        <p>The vehicle is the ultimate extension of your physical sovereignty. When you understand the logic of the spark, the fuel, and the air, you become immune to the 'Mystery' of the garage.</p>
     </div>
 
     <div class="container">
         
-        <h2>🎧 HEAR: The Voice of Sovereignty</h2>
+        <h2>🎧 HEAR: Internal Combustion Theory</h2>
         <div class="media-box">
-            <p><strong>Listen to the Podcast:</strong> Dr. Constant breaks down the internal combustion engine and removes the intimidation of automotive repair. <em>(Placeholder for Buzzsprout embed)</em></p>
-            <div id="buzzsprout-player-placeholder" style="background:#eaeded; padding:2rem; text-align:center; border-radius:4px; color:#5d6d7e; margin-bottom: 2rem;">
+            <p><strong>Listen to the Podcast:</strong> Dr. Constant breaks down the mechanical barriers, turning complex engineering into accessible logic for the sovereign owner. <em>(Placeholder for Buzzsprout embed)</em></p>
+            <div id="buzzsprout-player-placeholder" style="background:#e0e0e0; padding:2rem; text-align:center; border-radius:4px; color:#555; margin-bottom: 2rem;">
                 <em>[ Buzzsprout MP3 Player Embed Code Goes Here ]</em>
-            </div>
-
-            <h3 style="color: #17202a; margin-top: 2rem; border-top: 1px solid #d5d8dc; padding-top: 1rem;">The GSU Anthem: Four Strokes (Turn the Key)</h3>
-            <audio controls style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
-                <source src="automotive-anthem.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-
-            <div class="lyrics-box">
-                <h4>Official Lyrics</h4>
-                It’s sitting in the driveway, heavy in the steel<br>
-                A thousand pounds of freedom resting on the wheel<br>
-                But you treat it like a mystery, you treat it like a ghost<br>
-                Paying out the mechanic when you need the engine most!<br>
-                Pop the heavy hood, take a look at the machine<br>
-                It’s just metal, air, and fire burning the gasoline!<br><br>
-                
-                <strong>CHORUS:</strong><br>
-                Intake! Compression! Power! Exhaust!<br>
-                Learn the four strokes and calculate the cost!<br>
-                Check the heavy oil, change the rubber tire<br>
-                You are the master of the spark and the fire!<br>
-                Don't be a hostage to the man with the wrench<br>
-                Turn the heavy key and step off of the bench!
             </div>
         </div>
 
-        <h2>🕹️ PLAY: Engine Diagnostic Simulator</h2>
-        <p>Test your mechanical logic before you open the hood. GENO is active.</p>
+        <h2>🕹️ PLAY: Diagnostic Logic Simulator</h2>
+        <p>Before you lift the hood, solve the mechanical failure. A-Eye is watching your diagnostic path.</p>
         
         <div class="game-box">
-            <div class="geno-header">● GENO INTERACTIVE MEDIATOR ACTIVE</div>
+            <div class="geno-header">● GENO MECHANICAL MEDIATOR ACTIVE</div>
             <div id="scenario-content"></div>
         </div>
 
         <div class="purchase-box">
-            <h2 style="margin-top:0; justify-content:center; border:none; color:#e74c3c;">Own The Road</h2>
-            <p>You have played the simulation and heard the anthem. Now, acquire the complete guide to maintaining your vehicle and securing your freedom of movement.</p>
-            <a href="BASIC-AUTOMOTIVE-KNOWLEDGE.pdf" class="btn" target="_blank">Download PDF Manual</a>
+            <h2 style="margin-top:0; justify-content:center; border:none; color:#111;">Master the Machine</h2>
+            <p>Stop paying for mystery. Acquire the complete blueprint for automotive diagnostic logic and physical agency.</p>
+            <a href="YOUR_AMAZON_LINK_HERE" class="btn" target="_blank">Acquire the Book on Amazon</a>
         </div>
 
     </div>
@@ -110,37 +91,26 @@
     <script>
         const questions = [
             {
-                q: "An internal combustion engine requires exactly three things to run: Fuel, Air, and Spark. You turn the key, the starter motor cranks the engine strongly, but it will not start. Applying First Principles, what should you investigate?",
+                q: "Your engine is cranking normally but refuses to start. You have verified the tank has gas. What is the logical next step in the 'Amnesty Protocol' for diagnostics?",
                 choices: [
-                    "The battery must be completely dead.",
-                    "The starter motor needs to be replaced.",
-                    "The fuel delivery system (pump/filter) or the ignition system (spark plugs/coils)."
-                ],
-                correct: 2,
-                feedbackSuccess: "Mastery Achieved. The starter is turning the engine, meaning the battery and starter are fine. The failure point lies in either fuel delivery or spark generation.",
-                feedbackFail: "Strategic Failure. If you hear strong cranking, the battery and starter are doing their jobs. You must investigate the missing ingredients for combustion: fuel or spark."
-            },
-            {
-                q: "While driving on the highway, your red 'Oil Pressure' warning light illuminates on the dashboard. What is the immediate required action?",
-                choices: [
-                    "Turn up the radio to ignore the rattling noise and drive to the nearest mechanic 10 miles away.",
-                    "Pull over immediately to a safe spot, turn off the engine, and check the oil level dipstick.",
-                    "Wait until you get home to schedule an oil change for next week."
+                    "Replace the battery immediately.",
+                    "Check for the 'Big Three': Air, Spark, or Fuel delivery at the engine.",
+                    "Call a tow truck and accept institutional defeat."
                 ],
                 correct: 1,
-                feedbackSuccess: "Mastery Achieved. Oil pressure is the lifeblood of the engine. Continuing to drive without pressure will destroy the engine block in minutes.",
-                feedbackFail: "Strategic Failure. The oil light does not mean 'time for an oil change.' It means catastrophic friction is occurring right now. You must kill the engine immediately."
+                feedbackSuccess: "Mastery Achieved. An engine is a logical loop. If it won't fire, one of the three legs of the tripod is missing. Find the gap, don't just throw parts at it.",
+                feedbackFail: "Strategic Failure. The battery is cranking the engine, so the battery is functional. You are guessing instead of inferring."
             },
             {
-                q: "What is the primary function of your vehicle's alternator?",
+                q: "Why is a systematic 'Diagnostic Tree' superior to 'Skimming' the internet for common fixes?",
                 choices: [
-                    "To start the engine when you turn the key.",
-                    "To filter impurities out of the gasoline before it reaches the fuel injectors.",
-                    "To generate electricity to run the car's electronics and recharge the battery while the engine is running."
+                    "Internet fixes are always wrong.",
+                    "A Diagnostic Tree ensures you find the *cause* of the failure, preventing the same part from breaking again in 1,000 miles.",
+                    "The Diagnostic Tree makes the repair take longer, which feels more professional."
                 ],
-                correct: 2,
-                feedbackSuccess: "Mastery Achieved. The battery only starts the car; the alternator keeps it running. Understanding this prevents you from buying a new battery when the alternator is the real failure point.",
-                feedbackFail: "Strategic Failure. The starter starts the car. The alternator is essentially an onboard generator that sustains the electrical system once the engine is firing."
+                correct: 1,
+                feedbackSuccess: "Mastery Achieved. Symptoms are 'Ghost Signals.' The cause is the reality. Fix the reality, and the symptoms vanish permanently.",
+                feedbackFail: "Strategic Failure. This isn't about time or being a contrarian; it's about the precision of the logic path."
             }
         ];
 
@@ -149,11 +119,11 @@
         function loadQuestion() {
             const container = document.getElementById('scenario-content');
             if (currentQ >= questions.length) {
-                container.innerHTML = `<h3 style="color:#c0392b;">Simulation Complete</h3><p>You are ready to own the road.</p>`;
+                container.innerHTML = `<h3 style="color:#d4af37;">Diagnostic Complete</h3><p>You have demonstrated mechanical agency. The garage is yours.</p>`;
                 return;
             }
             const qData = questions[currentQ];
-            let html = `<p style="font-size: 1.15rem; margin-bottom: 2rem;"><strong>Scenario ${currentQ + 1}:</strong> ${qData.q}</p><div id="choices">`;
+            let html = `<p style="font-size: 1.15rem; margin-bottom: 2rem;"><strong>Diagnostic Scenario ${currentQ + 1}:</strong> ${qData.q}</p><div id="choices">`;
             qData.choices.forEach((choice, index) => {
                 html += `<button class="choice-btn" onclick="checkAnswer(${index})">${choice}</button>`;
             });
@@ -169,15 +139,15 @@
             feedbackArea.style.display = 'block';
             
             if(isCorrect) {
-                feedbackArea.style.background = 'rgba(46, 204, 113, 0.1)';
-                feedbackArea.style.border = '1px solid #2ecc71';
-                feedbackArea.style.color = '#27ae60';
+                feedbackArea.style.background = 'rgba(212, 175, 55, 0.1)';
+                feedbackArea.style.border = '1px solid #d4af37';
+                feedbackArea.style.color = '#d4af37';
                 feedbackArea.innerHTML = `<p>${qData.feedbackSuccess}</p><button class="btn" style="padding:0.5rem 1rem; margin-top:1rem;" onclick="nextQuestion()">Proceed</button>`;
             } else {
-                feedbackArea.style.background = 'rgba(231, 76, 60, 0.1)';
-                feedbackArea.style.border = '1px solid #e74c3c';
-                feedbackArea.style.color = '#c0392b';
-                feedbackArea.innerHTML = `<p>${qData.feedbackFail}</p><button class="btn" style="padding:0.5rem 1rem; margin-top:1rem; background-color:#e74c3c; color:#fff;" onclick="retryQuestion()">Re-evaluate</button>`;
+                feedbackArea.style.background = 'rgba(255, 51, 102, 0.1)';
+                feedbackArea.style.border = '1px solid #ff3366';
+                feedbackArea.style.color = '#ff809f';
+                feedbackArea.innerHTML = `<p>${qData.feedbackFail}</p><button class="btn" style="padding:0.5rem 1rem; margin-top:1rem; background-color:#ff3366; color:#fff;" onclick="retryQuestion()">Re-evaluate</button>`;
             }
         }
 
