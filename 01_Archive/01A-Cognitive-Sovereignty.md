@@ -20,8 +20,6 @@ My directive is to ensure you do not merely *consume* this data, but *master* it
 
 ### **II. E-READ OPTIMIZED CONTENT: THE MECHANICS OF CAPTURE**
 
-**[EMBED: Audio_Intro_DrConstant_01A.mp3]**
-
 The transition from a "Sovereign Mind" to a "Captured Mind" begins with the **Relational Machine**. In the age of digital saturation, algorithms are engineered to mimic intimacy. 
 
 This is the **Parasocial Trap**. By hijacking the neuro-circuitry designed for bonding (Oxytocin) and reward (Dopamine), platforms create a "Synthetic We" that erodes the "Individual I." To resist, one must employ **Epistemic Security**—the proactive defense of one's internal logic.
@@ -38,6 +36,6 @@ This is the **Parasocial Trap**. By hijacking the neuro-circuitry designed for b
 
 ### **IV. TRIFURCATION ROAD**
 
-* **[PATH A: THE ARCHIVE]** -> Analyze 'The Attention War.'
-* **[PATH B: THE WORKSHOP]** -> Access the 'Basic Electrical Game.'
-* **[PATH C: THE SYNERGY LAB]** -> Solve the 'Math of the Trap.'
+* **[PATH A: THE ARCHIVE]** -> [Analyze 'The Attention War'](/01_Archive/01B-The-Attention-War.md)
+* **[PATH B: THE WORKSHOP]** -> [Access the Basic Electrical Game](/electrical.html)
+* **[PATH C: THE SYNERGY LAB]** -> Solve the 'Math of the Trap'
