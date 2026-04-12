@@ -20,8 +20,6 @@ This module is not a 'video.' It is a cognitive endurance test. If you attempt t
 
 ### **II. E-READ OPTIMIZED CONTENT: NEURAL RECYCLING**
 
-**[EMBED: Video_AEye_AttentionBriefing_01B.mp4]**
-
 Deep reading is an act of **Neural Recycling**, where the brain repurposes visual tracking networks for high-level synthesis. 
 
 When we transition to fragmented digital consumption, we trigger the "skimming mindset," which down-regulates the **Dorsolateral Prefrontal Cortex**. This results in **Digital Overconfidence**: a state where you believe you have achieved mastery because the delivery was fast, while your comprehension remains dangerously superficial.
@@ -38,6 +36,6 @@ When we transition to fragmented digital consumption, we trigger the "skimming m
 
 ### **IV. TRIFURCATION ROAD**
 
-* **[PATH A: THE ARCHIVE]** -> Analyze 'Critical Thinking.'
-* **[PATH B: THE WORKSHOP]** -> Access the 'Diagnostic Simulator.'
-* **[PATH C: THE SYNERGY LAB]** -> Calculate the 'Neural Decay Ratio.'
+* **[PATH A: THE ARCHIVE]** -> [Analyze 'Critical Thinking'](/01_Archive/02A-Critical-Thinking.md)
+* **[PATH B: THE WORKSHOP]** -> [Access the Diagnostic Simulator](/electrical.html)
+* **[PATH C: THE SYNERGY LAB]** -> Calculate the 'Neural Decay Ratio'
